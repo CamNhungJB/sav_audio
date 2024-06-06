@@ -19,16 +19,27 @@ namespace client_app
 {
     public partial class Form1 : Form
     {
-        private HttpClient client;
+        public class TokenResponse
+        {
+            [JsonProperty("token")]
+            public string Token { get; set; }
+        }
+
+        public class Song
+        {
+            public string name { get; set; }
+        }
+
+        private HttpClient client = new HttpClient();
         private string token;
-        private WaveOutEvent waveOut;
-        private MediaFoundationReader mediaReader;
+        private IWavePlayer waveOutDevice;
+        private AudioFileReader audioFileReader;
+        private List<string> songNames = new List<string>();
+        private string currentFilePath;
 
         public Form1()
         {
             InitializeComponent();
-            client = new HttpClient();
-            waveOut = new WaveOutEvent();
         }
 
         private async void btnLogin_Click(object sender, EventArgs e)
@@ -75,108 +86,224 @@ namespace client_app
 
         private async void btnGetSongs_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(token))
+            await LoadSongsAsync();
+            /* if (string.IsNullOrEmpty(token))
+             {
+                 lblMessage.Text = "You must log in first.";
+                 return;
+             }
+
+             var songsUrl = "http://localhost:3000/api/audio/songs";
+             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+             try
+             {
+                 var response = await client.GetAsync(songsUrl);
+                 if (response.IsSuccessStatusCode)
+                 {
+                     var responseBody = await response.Content.ReadAsStringAsync();
+                     var songs = JsonConvert.DeserializeObject<List<Song>>(responseBody);
+                     listBoxSongs.DataSource = songs;
+                     listBoxSongs.DisplayMember = "name";
+                     lblMessage.Text = "Songs loaded successfully.";
+                 }
+                 else
+                 {
+                     lblMessage.Text = $"Failed to get songs: {response.ReasonPhrase}";
+                 }
+             }
+             catch (Exception ex)
+             {
+                 lblMessage.Text = $"Error: {ex.Message}";
+             }*/
+        }
+
+        private async void PlaySongButton_Click(object sender, EventArgs e)
+        {
+            ListBox songsListBox = this.Controls["songsListBox"] as ListBox;
+            if (songsListBox.SelectedItem != null)
             {
-                lblMessage.Text = "You must log in first.";
-                return;
+                string songName = songsListBox.SelectedItem.ToString();
+                string streamUrl = await GetSongStreamUrlAsync(songName);
+                if (!string.IsNullOrEmpty(streamUrl))
+                {
+                    await PlayMusicAsync(streamUrl, songName);
+                }
             }
+            else
+            {
+                MessageBox.Show("Please select a song first.");
+            }
+        }
 
-            var songsUrl = "http://localhost:3000/api/audio/songs";
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
+        private async Task LoadSongsAsync()
+        {
             try
             {
-                var response = await client.GetAsync(songsUrl);
-                if (response.IsSuccessStatusCode)
+                string url = "http://localhost:3000/api/audio/songs"; // Adjust this URL if needed
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+                JArray songs = JArray.Parse(responseBody);
+
+                ListBox songsListBox = this.Controls["songsListBox"] as ListBox;
+                songsListBox.Items.Clear();
+                songNames.Clear();
+
+                foreach (var song in songs)
                 {
-                    var responseBody = await response.Content.ReadAsStringAsync();
-                    var songs = JsonConvert.DeserializeObject<List<Song>>(responseBody);
-                    listBoxSongs.DataSource = songs;
-                    listBoxSongs.DisplayMember = "name";
-                    lblMessage.Text = "Songs loaded successfully.";
-                }
-                else
-                {
-                    lblMessage.Text = $"Failed to get songs: {response.ReasonPhrase}";
+                    songsListBox.Items.Add(song["name"].ToString());
+                    songNames.Add(song["name"].ToString());
                 }
             }
             catch (Exception ex)
             {
-                lblMessage.Text = $"Error: {ex.Message}";
+                MessageBox.Show("Error loading songs: " + ex.Message);
             }
         }
 
-        private async void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
+        private async Task<string> GetSongStreamUrlAsync(string songName)
         {
-            var selectedSong = listBoxSongs.SelectedItem as Song;
-            if (selectedSong != null)
+            try
             {
-                try
-                {
-                    var audioPlayer = new AudioPlayer();
-                    await audioPlayer.PlayAudio(selectedSong.name, token);
-                    lblMessage.Text = "Playing song...";
-                }
-                catch (Exception ex)
-                {
-                    lblMessage.Text = $"Error: {ex.Message}";
-                }
+                string url = $"http://localhost:3000/api/audio/stream/{songName}"; // Adjust this URL if needed
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+
+                string responseBody = await response.Content.ReadAsStringAsync();
+                JObject responseJson = JObject.Parse(responseBody);
+
+                return responseJson["url"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error getting song stream URL: " + ex.Message);
+                return null;
             }
         }
 
-        public class TokenResponse
+        private async Task PlayMusicAsync(string url, string songName)
         {
-            [JsonProperty("token")]
-            public string Token { get; set; }
-        }
-
-        public class Song
-        {
-            public string name { get; set; }
-        }
-
-        public class AudioPlayer
-        {
-            private static readonly HttpClient client = new HttpClient();
-
-            public async Task PlayAudio(string blobName, string token)
+            string extension = Path.GetExtension(songName);
+            string tempFilePath = Path.Combine(Path.GetTempPath(), "downloadedMusic" + extension);
+            Console.WriteLine(tempFilePath);
+            using (HttpClient httpClient = new HttpClient())
             {
-                var playUrl = $"http://localhost:3000/api/audio/stream/{blobName}";
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                try
+                var response = await httpClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
                 {
-                    var _response = await client.GetAsync(playUrl);
-                    if (_response.IsSuccessStatusCode)
+                    using (var fs = new FileStream(tempFilePath, FileMode.Create, FileAccess.Write, FileShare.None))
                     {
-                        var responseBody = await _response.Content.ReadAsStringAsync();
-                        var responseJson = JObject.Parse(responseBody);
-                        var sasUrl = responseJson["url"].ToString();
-                        byte[] audioData = await client.GetByteArrayAsync(sasUrl);
-                        Play(audioData);
-                        MessageBox.Show("Playing song...");
+                        await response.Content.CopyToAsync(fs);
                     }
-                    else
-                    {
-                        MessageBox.Show($"Failed to get song URL: {_response.ReasonPhrase}");
-                    }
+
+                    // Stop any currently playing music
+                    StopMusic();
+
+                    currentFilePath = tempFilePath;
+                    PlayMusic(tempFilePath);
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
+                    MessageBox.Show("Failed to download the song.");
                 }
             }
+        }
 
-            private void Play(byte[] audioData)
-            {
-                // Use C# libraries to play audio (e.g., NAudio)
-                // This is a simple example using System.Media.SoundPlayer
-                using (var ms = new MemoryStream(audioData))
-                using (var player = new SoundPlayer(ms))
+        private void PlayMusic(string filePath)
+        {
+            waveOutDevice = new WaveOut();
+            audioFileReader = new AudioFileReader(filePath);
+            waveOutDevice.Init(audioFileReader);
+            waveOutDevice.Play();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            StopMusic();
+            base.OnFormClosing(e);
+        }
+
+        private void PauseButton_Click(object sender, EventArgs e)
+        {
+            waveOutDevice?.Pause();
+        }
+
+        private void ResumeButton_Click(object sender, EventArgs e)
+        {
+            waveOutDevice?.Play();
+        }
+
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            StopMusic();
+        }
+
+        private void StopMusic()
+        {
+            waveOutDevice?.Stop();
+            audioFileReader?.Dispose();
+            waveOutDevice?.Dispose();
+            currentFilePath = null;
+        }
+
+        /*        private async void listBoxSongs_SelectedIndexChanged(object sender, EventArgs e)
                 {
+                    var selectedSong = listBoxSongs.SelectedItem as Song;
+                    if (selectedSong != null)
+                    {
+                        var playUrl = $"http://localhost:3000/api/audio/stream/{selectedSong.name}";
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                        try
+                        {
+                            var response = await client.GetAsync(playUrl);
+                            if (response.IsSuccessStatusCode)
+                            {
+                                var responseBody = await response.Content.ReadAsStringAsync();
+                                var responseJson = JObject.Parse(responseBody);
+                                var sasUrl = responseJson["url"].ToString();
+                                txtCurrentSong.Text = sasUrl;
+                                PlaySong(sasUrl);
+                                lblMessage.Text = "Playing song...";
+                            }
+                            else
+                            {
+                                lblMessage.Text = $"Failed to get song URL: {response.ReasonPhrase}";
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            lblMessage.Text = $"Error: {ex.Message}";
+                        }
+                    }
+                }
+
+                private async void PlaySong(string url)
+                {
+                    *//*if (mediaReader != null)
+                    {
+                        mediaReader.Dispose();
+                    }
+
+                    try
+                    {
+                        mediaReader = new MediaFoundationReader(url);
+                        waveOut.Init(mediaReader);
+                        waveOut.Play();
+                        MessageBox.Show("Enjoying your songs");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error playing song: {ex.Message}");
+                    }*//*
+                    byte[] audioData = await client.GetByteArrayAsync(url);
+                    MemoryStream audioStream = new MemoryStream(audioData);
+                    SoundPlayer player = new SoundPlayer(audioStream);
                     player.PlaySync();
-                }
-            }
-        }
+                }*/
     }
 }

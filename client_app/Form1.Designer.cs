@@ -39,8 +39,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGetSongs = new System.Windows.Forms.Button();
-            this.listBoxSongs = new System.Windows.Forms.ListBox();
+            this.songsListBox = new System.Windows.Forms.ListBox();
             this.txtCurrentSong = new System.Windows.Forms.TextBox();
+            this.PlaySongButton = new System.Windows.Forms.Button();
+            this.PauseButton = new System.Windows.Forms.Button();
+            this.ResumeButton = new System.Windows.Forms.Button();
+            this.StopButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -105,16 +109,15 @@
             // 
             // txtToken
             // 
-            this.txtToken.Location = new System.Drawing.Point(405, 52);
-            this.txtToken.Multiline = true;
+            this.txtToken.Location = new System.Drawing.Point(802, 12);
             this.txtToken.Name = "txtToken";
-            this.txtToken.Size = new System.Drawing.Size(201, 259);
+            this.txtToken.Size = new System.Drawing.Size(298, 22);
             this.txtToken.TabIndex = 9;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(402, 12);
+            this.label3.Location = new System.Drawing.Point(741, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 10;
@@ -123,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(706, 12);
+            this.label4.Location = new System.Drawing.Point(465, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 16);
             this.label4.TabIndex = 10;
@@ -131,7 +134,7 @@
             // 
             // btnGetSongs
             // 
-            this.btnGetSongs.Location = new System.Drawing.Point(148, 280);
+            this.btnGetSongs.Location = new System.Drawing.Point(146, 289);
             this.btnGetSongs.Name = "btnGetSongs";
             this.btnGetSongs.Size = new System.Drawing.Size(131, 31);
             this.btnGetSongs.TabIndex = 12;
@@ -139,30 +142,73 @@
             this.btnGetSongs.UseVisualStyleBackColor = true;
             this.btnGetSongs.Click += new System.EventHandler(this.btnGetSongs_Click);
             // 
-            // listBoxSongs
+            // songsListBox
             // 
-            this.listBoxSongs.FormattingEnabled = true;
-            this.listBoxSongs.ItemHeight = 16;
-            this.listBoxSongs.Location = new System.Drawing.Point(709, 52);
-            this.listBoxSongs.Name = "listBoxSongs";
-            this.listBoxSongs.Size = new System.Drawing.Size(338, 260);
-            this.listBoxSongs.TabIndex = 13;
-            this.listBoxSongs.SelectedIndexChanged += new System.EventHandler(this.listBoxSongs_SelectedIndexChanged);
+            this.songsListBox.FormattingEnabled = true;
+            this.songsListBox.ItemHeight = 16;
+            this.songsListBox.Location = new System.Drawing.Point(459, 71);
+            this.songsListBox.Name = "songsListBox";
+            this.songsListBox.Size = new System.Drawing.Size(338, 260);
+            this.songsListBox.TabIndex = 13;
             // 
             // txtCurrentSong
             // 
-            this.txtCurrentSong.Location = new System.Drawing.Point(709, 347);
+            this.txtCurrentSong.Location = new System.Drawing.Point(762, 40);
             this.txtCurrentSong.Name = "txtCurrentSong";
             this.txtCurrentSong.Size = new System.Drawing.Size(338, 22);
             this.txtCurrentSong.TabIndex = 14;
+            // 
+            // PlaySongButton
+            // 
+            this.PlaySongButton.Location = new System.Drawing.Point(441, 356);
+            this.PlaySongButton.Name = "PlaySongButton";
+            this.PlaySongButton.Size = new System.Drawing.Size(75, 23);
+            this.PlaySongButton.TabIndex = 15;
+            this.PlaySongButton.Text = "Play";
+            this.PlaySongButton.UseVisualStyleBackColor = true;
+            this.PlaySongButton.Click += new System.EventHandler(this.PlaySongButton_Click);
+            // 
+            // PauseButton
+            // 
+            this.PauseButton.Location = new System.Drawing.Point(536, 356);
+            this.PauseButton.Name = "PauseButton";
+            this.PauseButton.Size = new System.Drawing.Size(75, 23);
+            this.PauseButton.TabIndex = 16;
+            this.PauseButton.Text = "Pause";
+            this.PauseButton.UseVisualStyleBackColor = true;
+            this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
+            // 
+            // ResumeButton
+            // 
+            this.ResumeButton.Location = new System.Drawing.Point(630, 356);
+            this.ResumeButton.Name = "ResumeButton";
+            this.ResumeButton.Size = new System.Drawing.Size(75, 23);
+            this.ResumeButton.TabIndex = 17;
+            this.ResumeButton.Text = "Resume";
+            this.ResumeButton.UseVisualStyleBackColor = true;
+            this.ResumeButton.Click += new System.EventHandler(this.ResumeButton_Click);
+            // 
+            // StopButton
+            // 
+            this.StopButton.Location = new System.Drawing.Point(722, 356);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(75, 23);
+            this.StopButton.TabIndex = 17;
+            this.StopButton.Text = "Stop";
+            this.StopButton.UseVisualStyleBackColor = true;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 403);
+            this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.ResumeButton);
+            this.Controls.Add(this.PauseButton);
+            this.Controls.Add(this.PlaySongButton);
             this.Controls.Add(this.txtCurrentSong);
-            this.Controls.Add(this.listBoxSongs);
+            this.Controls.Add(this.songsListBox);
             this.Controls.Add(this.btnGetSongs);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -194,8 +240,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGetSongs;
-        private System.Windows.Forms.ListBox listBoxSongs;
+        private System.Windows.Forms.ListBox songsListBox;
         private System.Windows.Forms.TextBox txtCurrentSong;
+        private System.Windows.Forms.Button PlaySongButton;
+        private System.Windows.Forms.Button PauseButton;
+        private System.Windows.Forms.Button ResumeButton;
+        private System.Windows.Forms.Button StopButton;
     }
 }
 
