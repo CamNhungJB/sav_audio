@@ -76,7 +76,6 @@ D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.ValueTuple.xml
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.AssemblyReference.cache
-D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Form1.resources
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Form2.resources
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Properties.Resources.resources
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.GenerateResource.cache
@@ -84,3 +83,5 @@ D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.Up2Date
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.exe
 D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.pdb
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.MusicPlayerForm.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Form1.resources
