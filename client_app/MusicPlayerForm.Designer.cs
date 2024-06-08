@@ -34,6 +34,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.btnLoadSongs = new System.Windows.Forms.Button();
             this.songsListBox = new System.Windows.Forms.ListBox();
+            this.textBoxDebug = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnPlaySong
@@ -95,11 +96,20 @@
             this.songsListBox.Size = new System.Drawing.Size(318, 308);
             this.songsListBox.TabIndex = 2;
             // 
+            // textBoxDebug
+            // 
+            this.textBoxDebug.Location = new System.Drawing.Point(31, 51);
+            this.textBoxDebug.Multiline = true;
+            this.textBoxDebug.Name = "textBoxDebug";
+            this.textBoxDebug.Size = new System.Drawing.Size(156, 308);
+            this.textBoxDebug.TabIndex = 3;
+            // 
             // MusicPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxDebug);
             this.Controls.Add(this.songsListBox);
             this.Controls.Add(this.btnLoadSongs);
             this.Controls.Add(this.btnStop);
@@ -109,6 +119,7 @@
             this.Name = "MusicPlayerForm";
             this.Text = "MusicPlayerForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -120,5 +131,6 @@
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnLoadSongs;
         private System.Windows.Forms.ListBox songsListBox;
+        private System.Windows.Forms.TextBox textBoxDebug;
     }
 }

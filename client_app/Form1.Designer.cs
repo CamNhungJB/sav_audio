@@ -43,6 +43,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(219, 22);
             this.txtPassword.TabIndex = 0;
+            this.txtPassword.Text = "150804";
             // 
             // txtUsername
             // 
@@ -50,6 +51,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(219, 22);
             this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "thienan";
             // 
             // btnLogin
             // 
@@ -97,7 +99,7 @@
             this.btnOpenRegister.UseVisualStyleBackColor = true;
             this.btnOpenRegister.Click += new System.EventHandler(this.btnOpenRegister_Click);
             // 
-            // LoginForm
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -109,7 +111,7 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPassword);
-            this.Name = "LoginForm";
+            this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
