@@ -1,0 +1,140 @@
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\client_app.exe.config
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\client_app.exe
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\client_app.pdb
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\Newtonsoft.Json.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\Newtonsoft.Json.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.csproj.AssemblyReference.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.Form1.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.Properties.Resources.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.csproj.GenerateResource.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.csproj.CoreCompileInputs.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.csproj.Up2Date
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.exe
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.pdb
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\obj\Debug\client_app.Form2.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\Microsoft.Win32.Registry.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Asio.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Core.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Midi.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Wasapi.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.WinForms.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.WinMM.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\System.Security.AccessControl.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\System.Security.Principal.Windows.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\Microsoft.Win32.Registry.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Asio.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Core.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Midi.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.Wasapi.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.WinForms.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\NAudio.WinMM.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\System.Security.AccessControl.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\client_app\bin\Debug\System.Security.Principal.Windows.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\client_app.exe.config
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\client_app.exe
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\client_app.pdb
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Microsoft.Win32.Registry.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Asio.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Core.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Midi.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Wasapi.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.WinForms.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.WinMM.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Newtonsoft.Json.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Buffers.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Memory.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Numerics.Vectors.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Security.AccessControl.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Security.Principal.Windows.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Text.Encodings.Web.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Text.Json.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.ValueTuple.dll
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Microsoft.Win32.Registry.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Asio.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Core.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Midi.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.Wasapi.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.WinForms.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\NAudio.WinMM.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\Newtonsoft.Json.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Buffers.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Memory.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Numerics.Vectors.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Security.AccessControl.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Security.Principal.Windows.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Text.Encodings.Web.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Text.Json.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\bin\Debug\System.ValueTuple.xml
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.AssemblyReference.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Form2.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Properties.Resources.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.GenerateResource.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.CoreCompileInputs.cache
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.csproj.Up2Date
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.exe
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.pdb
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.MusicPlayerForm.resources
+D:\phamthienan\TAI_LIEU_MON_HOC\Project_MMH\project_app\sav_audio\client_app\obj\Debug\client_app.Form1.resources
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\client_app.exe.config
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\client_app.exe
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\client_app.pdb
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Microsoft.Win32.Registry.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Asio.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Core.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Midi.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Wasapi.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.WinForms.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.WinMM.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Newtonsoft.Json.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Buffers.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Memory.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Security.AccessControl.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Text.Json.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.ValueTuple.dll
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Asio.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Core.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Midi.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.Wasapi.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.WinForms.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\NAudio.WinMM.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\Newtonsoft.Json.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Buffers.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Memory.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Security.AccessControl.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Text.Json.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\bin\Debug\System.ValueTuple.xml
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.csproj.AssemblyReference.cache
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.Form1.resources
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.Form2.resources
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.MusicPlayerForm.resources
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.Properties.Resources.resources
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.csproj.GenerateResource.cache
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.csproj.CopyComplete
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.exe
+C:\Users\HP\Desktop\Hoi tho cuoi cung\sav_audio\client_app\obj\Debug\client_app.pdb
