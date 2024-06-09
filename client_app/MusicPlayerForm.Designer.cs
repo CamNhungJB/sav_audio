@@ -33,13 +33,18 @@
             this.btnResume = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnLoadSongs = new System.Windows.Forms.Button();
-            this.songsListBox = new System.Windows.Forms.ListBox();
             this.textBoxDebug = new System.Windows.Forms.TextBox();
+            this.listViewSongs = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Album = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Artist = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Length = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btnPlaySong
             // 
-            this.btnPlaySong.Location = new System.Drawing.Point(226, 399);
+            this.btnPlaySong.Location = new System.Drawing.Point(448, 405);
             this.btnPlaySong.Name = "btnPlaySong";
             this.btnPlaySong.Size = new System.Drawing.Size(75, 23);
             this.btnPlaySong.TabIndex = 0;
@@ -49,7 +54,7 @@
             // 
             // btnPause
             // 
-            this.btnPause.Location = new System.Drawing.Point(307, 399);
+            this.btnPause.Location = new System.Drawing.Point(529, 405);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(75, 23);
             this.btnPause.TabIndex = 0;
@@ -59,7 +64,7 @@
             // 
             // btnResume
             // 
-            this.btnResume.Location = new System.Drawing.Point(388, 399);
+            this.btnResume.Location = new System.Drawing.Point(610, 405);
             this.btnResume.Name = "btnResume";
             this.btnResume.Size = new System.Drawing.Size(75, 23);
             this.btnResume.TabIndex = 0;
@@ -69,7 +74,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(469, 399);
+            this.btnStop.Location = new System.Drawing.Point(691, 405);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 0;
@@ -79,22 +84,13 @@
             // 
             // btnLoadSongs
             // 
-            this.btnLoadSongs.Location = new System.Drawing.Point(587, 51);
+            this.btnLoadSongs.Location = new System.Drawing.Point(226, 405);
             this.btnLoadSongs.Name = "btnLoadSongs";
-            this.btnLoadSongs.Size = new System.Drawing.Size(134, 29);
+            this.btnLoadSongs.Size = new System.Drawing.Size(97, 29);
             this.btnLoadSongs.TabIndex = 1;
             this.btnLoadSongs.Text = "Load songs";
             this.btnLoadSongs.UseVisualStyleBackColor = true;
             this.btnLoadSongs.Click += new System.EventHandler(this.btnLoadSongs_Click);
-            // 
-            // songsListBox
-            // 
-            this.songsListBox.FormattingEnabled = true;
-            this.songsListBox.ItemHeight = 16;
-            this.songsListBox.Location = new System.Drawing.Point(226, 51);
-            this.songsListBox.Name = "songsListBox";
-            this.songsListBox.Size = new System.Drawing.Size(318, 308);
-            this.songsListBox.TabIndex = 2;
             // 
             // textBoxDebug
             // 
@@ -104,13 +100,50 @@
             this.textBoxDebug.Size = new System.Drawing.Size(156, 308);
             this.textBoxDebug.TabIndex = 3;
             // 
+            // listViewSongs
+            // 
+            this.listViewSongs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Title,
+            this.Album,
+            this.Artist,
+            this.Length});
+            this.listViewSongs.GridLines = true;
+            this.listViewSongs.HideSelection = false;
+            this.listViewSongs.Location = new System.Drawing.Point(226, 51);
+            this.listViewSongs.Name = "listViewSongs";
+            this.listViewSongs.Size = new System.Drawing.Size(540, 342);
+            this.listViewSongs.TabIndex = 4;
+            this.listViewSongs.UseCompatibleStateImageBehavior = false;
+            this.listViewSongs.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Title
+            // 
+            this.Title.Text = "Title";
+            // 
+            // Album
+            // 
+            this.Album.Text = "Album";
+            // 
+            // Artist
+            // 
+            this.Artist.Text = "Artist";
+            // 
+            // Length
+            // 
+            this.Length.Text = "Length";
+            // 
             // MusicPlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listViewSongs);
             this.Controls.Add(this.textBoxDebug);
-            this.Controls.Add(this.songsListBox);
             this.Controls.Add(this.btnLoadSongs);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnResume);
@@ -130,7 +163,12 @@
         private System.Windows.Forms.Button btnResume;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Button btnLoadSongs;
-        private System.Windows.Forms.ListBox songsListBox;
         private System.Windows.Forms.TextBox textBoxDebug;
+        private System.Windows.Forms.ListView listViewSongs;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Album;
+        private System.Windows.Forms.ColumnHeader Artist;
+        private System.Windows.Forms.ColumnHeader Length;
     }
 }

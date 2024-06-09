@@ -4,7 +4,7 @@ const audioController = require('../controllers/audioController');  // Ensure th
 const authMiddleware = require('../middleware/authMiddleware');    // Ensure the correct path
 
 router.get('/songs', authMiddleware, audioController.getSongs);
-router.get('/stream/:songId', authMiddleware, audioController.streamSong);
-router.get('/play/:id', audioController.convertAndPlayAudio);
+router.get('/link/:songId', authMiddleware, audioController.linkSongs);
+router.get('/play/:id', audioController.streamSongs);
 
 module.exports = router;  // Ensure export router correctly
