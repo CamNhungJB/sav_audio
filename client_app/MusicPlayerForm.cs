@@ -19,11 +19,8 @@ namespace client_app
     {
         private HttpClient client = new HttpClient();
         private string token;
-        private IWavePlayer waveOutDevice;
-        private AudioFileReader audioFileReader;
-        private List<string> songNames = new List<string>();
-        private string currentFilePath;
         private VlcControl vlcControl;
+        private static string vlcLibDirectory;
 
         public class Song
         {
@@ -41,16 +38,27 @@ namespace client_app
 
             [JsonProperty("length")]
             public string Length { get; set; }
-
         }
-
 
         public MusicPlayerForm(string token)
         {
             InitializeComponent();
             this.token = token;
 
+            // Đường dẫn VLC tương ứng
+            var vlcLibDirectory = new DirectoryInfo(@"C:\Program Files\VideoLAN\VLC"); // x64 path
+            if (Environment.Is64BitProcess)
+            {
+                vlcLibDirectory = new DirectoryInfo(@"C:\Program Files\VideoLAN\VLC");
+            }
+            else
+            {
+                vlcLibDirectory = new DirectoryInfo(@"C:\Program Files (x86)\VideoLAN\VLC");
+            }
+
             vlcControl = new VlcControl();
+            vlcControl.VlcLibDirectory = vlcLibDirectory;
+            vlcControl.EndInit(); // Quan trọng: Kết thúc khởi tạo
             vlcControl.Dock = DockStyle.Fill;
             this.Controls.Add(vlcControl);
         }
@@ -89,7 +97,6 @@ namespace client_app
             }
         }
 
-
         private async void btnPlaySong_Click(object sender, EventArgs e)
         {
             if (listViewSongs.SelectedItems.Count == 0)
@@ -99,8 +106,10 @@ namespace client_app
             }
 
             var selectedSong = listViewSongs.SelectedItems[0];
-            var songTitle = selectedSong.SubItems[1].Text; // Assuming the title is in the second column
+            var songTitle = selectedSong.SubItems[1].Text.Replace(" ", ""); // Assuming the title is in the second column
+
             var streamUrl = $"http://localhost:3000/api/audio/songs/stream/{Uri.EscapeDataString(songTitle)}";
+            /*MessageBox.Show($"Streaming song: {streamUrl}");  */
 
             try
             {
@@ -111,21 +120,17 @@ namespace client_app
                 {
                     var sasUrl = await response.Content.ReadAsStringAsync();
 
-                    // Log the URL for debugging
-                    Console.WriteLine($"SAS URL: {sasUrl}");
-
                     // Ensure the SAS URL is properly trimmed and valid
                     sasUrl = sasUrl.Trim('"');
-
                     // Validate the SAS URL
                     if (Uri.TryCreate(sasUrl, UriKind.Absolute, out Uri validUri))
                     {
                         // Log the valid URI
                         Console.WriteLine($"Valid URI: {validUri}");
 
+                        vlcControl.Buffering += OnMediaPlayerBuffering;
                         // Use the VLC control to play the valid URI
-                        vlcControl.Play(validUri);
-                        Console.WriteLine("Playing song..." + vlcControl.Length);
+                        vlcControl.Play(validUri.ToString());
                     }
                     else
                     {
@@ -146,6 +151,15 @@ namespace client_app
             }
         }
 
+        private void OnMediaPlayerBuffering(object sender, VlcMediaPlayerBufferingEventArgs e)
+        {
+            // Check if buffering is complete
+            if (e.NewCache >= 100)
+            {
+                // Buffering complete, do something (e.g., play the media)
+                Console.WriteLine("Buffering complete");
+            }
+        }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
@@ -163,4 +177,3 @@ namespace client_app
         }
     }
 }
-  
