@@ -47,28 +47,31 @@ exports.linkSongs = async (req, res) => {
 };
 
 exports.streamSongs = async (req, res) => {
-  const { id } = req.params; // Assuming song ID is passed as a route parameter
+  const { title } = req.params; // Get the song title from the request parameters
+  console.log(`Received request to stream song with title: ${title}`);
 
   try {
-    const songs = await sequelize.query('SELECT * FROM playlist WHERE id = ?', {
-      replacements: [id],
-      type: QueryTypes.SELECT
-    });
-    const song = songs[0];
-    
-    if (!song) {
-      return res.status(404).json({ message: 'Song not found' });
-    }
+    const blobName = `${title}.m3u8`; // Adjust the blob name based on how your blobs are named in Azure
+    console.log(`Blob name determined: ${blobName}`);
 
-    const blobName = `${song.id}.m3u8`;
     const containerClient = blobServiceClient.getContainerClient(containerName);
     const blobClient = containerClient.getBlobClient(blobName);
+    console.log('Blob client created.');
 
-    const downloadBlockBlobResponse = await blobClient.download(0);
-    
-    res.setHeader('Content-Type', 'application/vnd.apple.mpegurl');
-    downloadBlockBlobResponse.readableStreamBody.pipe(res);
+    // Generate the SAS token for secure access
+    const sasToken = generateBlobSASQueryParameters({
+      containerName,
+      blobName,
+      permissions: BlobSASPermissions.parse('r'),
+      expiresOn: new Date(new Date().valueOf() + 3600 * 1000) // 60 minutes expiry
+    }, new StorageSharedKeyCredential(accountName, accountKey)).toString();
+
+    // Construct the full SAS URL
+    const sasUrl = `${blobClient.url}?${sasToken}`;
+    console.log(`SAS URL generated: ${sasUrl}`);
+    res.json(sasUrl); // Send the SAS URL to the client
   } catch (error) {
+    console.error('Error streaming song:', error);
     res.status(500).json({ message: 'Error streaming song', error });
   }
 };

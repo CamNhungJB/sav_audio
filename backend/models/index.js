@@ -7,18 +7,3 @@ const initDb = async () => {
 };
 
 module.exports = { User, initDb };
-
-
-// const mysql = require('mysql2/promise');
-
-// const initDb = async () => {
-//   const connection = await mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: '', // replace with your MySQL password
-//     database: 'nt219'  // replace with your database name
-//   });
-//   return connection;
-// };
-
-// module.exports = { initDb };

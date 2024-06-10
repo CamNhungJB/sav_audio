@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const audioController = require('../controllers/audioController');  // Ensure the correct path
-const authMiddleware = require('../middleware/authMiddleware');    // Ensure the correct path
+const audioController = require('../controllers/audioController');
 
-router.get('/songs', authMiddleware, audioController.getSongs);
-router.get('/link/:songId', authMiddleware, audioController.linkSongs);
-router.get('/play/:id', audioController.streamSongs);
+router.get('/songs', audioController.getSongs);
+router.get('/songs/link', audioController.linkSongs);
+router.get('/songs/stream/:title', audioController.streamSongs); // Update this route to use the song title
 
-module.exports = router;  // Ensure export router correctly
+module.exports = router;
