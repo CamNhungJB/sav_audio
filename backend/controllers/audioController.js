@@ -2,33 +2,41 @@
 const { BlobServiceClient, StorageSharedKeyCredential, BlobSASPermissions, generateBlobSASQueryParameters } = require('@azure/storage-blob');
 const sequelize = require('../config/db'); // Import the Sequelize instance
 const { QueryTypes } = require('sequelize');
+require('dotenv').config(); // Đọc các biến môi trường từ file .env
 
-const AZURE_STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=22520028blob;AccountKey=LNM7RAWpKPV/pgRs9nLH1S1QDDRnfATzL4l6zSkdZyg1yx0bIiiIts/mZeMfPyhsZDUr8dFI/tGp+AStBQQrag==;EndpointSuffix=core.windows.net";
+// Sử dụng biến môi trường cho thông tin kết nối
+const AZURE_STORAGE_CONNECTION_STRING = process.env.AZURE_STORAGE_CONNECTION_STRING;
+const accountName = process.env.AZURE_ACCOUNT_NAME;
+const accountKey = process.env.AZURE_ACCOUNT_KEY;
+const containerName = process.env.AZURE_CONTAINER_NAME;
+
 const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
-const containerName = "22520028";
-const accountName = "22520028blob";
-const accountKey = "LNM7RAWpKPV/pgRs9nLH1S1QDDRnfATzL4l6zSkdZyg1yx0bIiiIts/mZeMfPyhsZDUr8dFI/tGp+AStBQQrag==";
 
+/**
+ * Lấy danh sách các bài hát từ cơ sở dữ liệu
+ */
 exports.getSongs = async (req, res) => {
   try {
     const songs = await sequelize.query('SELECT * FROM playlist', { type: QueryTypes.SELECT });
     res.json(songs);
   } catch (error) {
+    console.error('Error fetching songs:', error);
     res.status(500).json({ message: 'Error fetching songs', error });
   }
 };
 
+/**
+ * Tạo SAS URL cho các bài hát
+ */
 exports.linkSongs = async (req, res) => {
   try {
     const songs = await sequelize.query('SELECT * FROM playlist', { type: QueryTypes.SELECT });
-    
     const credentials = new StorageSharedKeyCredential(accountName, accountKey);
     const containerClient = blobServiceClient.getContainerClient(containerName);
-    
+
     const sasUrls = songs.map(song => {
       const blobName = `${song.id}.m3u8`; // Assuming blob names are the song IDs
       const blobClient = containerClient.getBlobClient(blobName);
-      
       const sasToken = generateBlobSASQueryParameters({
         containerName,
         blobName,
@@ -42,23 +50,25 @@ exports.linkSongs = async (req, res) => {
 
     res.json(sasUrls);
   } catch (error) {
+    console.error('Error generating SAS URLs:', error);
     res.status(500).json({ message: 'Error generating SAS URLs', error });
   }
 };
 
+/**
+ * Truyền tải bài hát
+ */
 exports.streamSongs = async (req, res) => {
-  const { title } = req.params; // Get the song title from the request parameters
+  const { title } = req.params; // Lấy tiêu đề bài hát từ tham số request
   console.log(`Received request to stream song with title: ${title}`);
 
   try {
-    const blobName = `${title}.m3u8`; // Adjust the blob name based on how your blobs are named in Azure
-    console.log(`Blob name determined: ${blobName}`);
-
+    const blobName = `${title}.m3u8`; // Điều chỉnh tên blob dựa trên cách đặt tên trong Azure
     const containerClient = blobServiceClient.getContainerClient(containerName);
     const blobClient = containerClient.getBlobClient(blobName);
     console.log('Blob client created.');
 
-    // Generate the SAS token for secure access
+    // Tạo SAS token để truy cập an toàn
     const sasToken = generateBlobSASQueryParameters({
       containerName,
       blobName,
@@ -66,10 +76,10 @@ exports.streamSongs = async (req, res) => {
       expiresOn: new Date(new Date().valueOf() + 3600 * 1000) // 60 minutes expiry
     }, new StorageSharedKeyCredential(accountName, accountKey)).toString();
 
-    // Construct the full SAS URL
+    // Tạo URL SAS hoàn chỉnh
     const sasUrl = `${blobClient.url}?${sasToken}`;
     console.log(`SAS URL generated: ${sasUrl}`);
-    res.json(sasUrl); // Send the SAS URL to the client
+    res.json(sasUrl); // Gửi URL SAS đến client
   } catch (error) {
     console.error('Error streaming song:', error);
     res.status(500).json({ message: 'Error streaming song', error });
